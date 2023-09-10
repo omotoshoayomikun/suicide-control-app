@@ -5,7 +5,7 @@ import GlobalStyle from "../../../utils/GlobalStyle"
 import { Input } from '../../Forms/Input'
 import { ScrollView } from 'react-native-gesture-handler'
 
-const { container, flex_row, flex1, gap10, mb_10, flex1_5, mt_40, containerScroll } = GlobalStyle
+const { headerText, flex_row, flex1, gap10, mb_10, flex1_5, mt_40, containerScroll, mb_20 } = GlobalStyle
 
 function Sign_Up({ navigation }) {
 
@@ -22,15 +22,15 @@ function Sign_Up({ navigation }) {
         },
         {
             id: 3,
-            placeholder: 'Email',
+            placeholder: 'Phone Number',
         },
         {
             id: 4,
-            placeholder: 'Gender',
+            placeholder: 'Email',
         },
         {
             id: 5,
-            placeholder: 'Phone Number',
+            placeholder: 'Gender',
         },
         {
             id: 6,
@@ -53,41 +53,29 @@ function Sign_Up({ navigation }) {
                     <BackBtn handlePress={() => navigation.goBack()} />
                 </View>
                 <View>
-                    <Text>Let's get</Text>
-                    <Text>you started</Text>
-                    <View style={[flex_row, gap10, mb_10]}>
+                    <View style={[mb_20]}>
+                        <Text style={[headerText]}>Let's get</Text>
+                        <Text style={[headerText]}>you started</Text>
+                    </View>
+                    <View style={[gap10, mb_10]}>
                         {
                             Inputs.map((input) => (
                                 <View key={input.id} style={[flex1]}>
                                     <Input placeholder={input.placeholder} />
                                 </View>
-                            )).slice(0, 2)
+                            )).slice(0, 4)
                         }
                     </View>
-                    {
-                        Inputs.map((input) => (
-                            <View key={input.id} style={[mb_10]}>
-                                <Input placeholder={input.placeholder} />
-                            </View>
-                        )).slice(2, 3)
-                    }
-                    <View style={[flex_row, gap10, mb_10]}>
+                    <View style={[gap10, mb_10]}>
                         {
                             Inputs.map((input) => (
                                 <View key={input.id} style={[flex1]}>
-                                    <Input placeholder={input.placeholder} />
-                                </View>
-                            )).slice(3, 4)
-                        }
-                        {
-                            Inputs.map((input) => (
-                                <View key={input.id} style={[flex1_5]}>
                                     <Input placeholder={input.placeholder} />
                                 </View>
                             )).slice(4, 5)
                         }
                     </View>
-                    <View style={[flex_row, gap10, mb_10]}>
+                    <View style={[gap10, mb_10]}>
                         {
                             Inputs.map((input) => (
                                 <View key={input.id} style={[flex1]}>

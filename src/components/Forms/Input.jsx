@@ -1,6 +1,8 @@
 import { StyleSheet, TextInput, View } from "react-native"
+import GlobalStyle from "../../utils/GlobalStyle"
 
 export const Input = (props) => {
+    const { Purple } = GlobalStyle
     return (
         <View style={styles.container}>
             <TextInput
@@ -8,6 +10,8 @@ export const Input = (props) => {
                 placeholder={props.placeholder}
                 style={styles.input}
                 secureTextEntry={props.secure === true ? true : false}
+                selectionColor={'#701a75'}
+                cursorColor={'#701a75'}
             />
         </View>
     )
@@ -18,7 +22,9 @@ const styles = StyleSheet.create({
         width: '100%',
     },
     input: {
-        backgroundColor: '#f3e8ff',
+        backgroundColor: '#0E0E240D',
+        borderWidth: 2,
+        borderColor: '#0E0E241A',
         borderRadius: 5,
         // height: 50,
         padding: 12.5,

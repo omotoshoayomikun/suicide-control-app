@@ -46,8 +46,50 @@ export default StyleSheet.create({
     mb_20: {
         marginBottom: 20,
     },
+    mb_30: {
+        marginBottom: 30,
+    },
     mb_40: {
         marginBottom: 40,
+    },
+    mr_10: {
+        marginRight: 10,
+    },
+    mr_20: {
+        marginRight: 20,
+    },
+    mr_30: {
+        marginRight: 30,
+    },
+    mr_40: {
+        marginRight: 40,
+    },
+    mr_50: {
+        marginRight: 50,
+    },
+    ml_10: {
+        marginLeft: 10,
+    },
+    ml_20: {
+        marginLeft: 20,
+    },
+    ml_30: {
+        marginLeft: 30,
+    },
+    ml_40: {
+        marginLeft: 40,
+    },
+    ml_50: {
+        marginLeft: 50,
+    },
+    mt_10: {
+        marginTop: 10,
+    },
+    mt_20: {
+        marginTop: 20,
+    },
+    mt_30: {
+        marginTop: 30,
     },
     mt_40: {
         marginTop: 40,
@@ -85,6 +127,12 @@ export default StyleSheet.create({
     item_end: {
         alignItems: 'flex-end'
     },
+    relative: {
+        position: 'relative'
+    },
+    absolute: {
+        position: 'absolute'
+    },
     w_full: {
         width: '100%',
     },
@@ -94,18 +142,28 @@ export default StyleSheet.create({
     flex1: {
         flex: 1,
     },
-    flex1_5: {
-        flex: 1.5,
+    flex1_5: { flex: 1.5, },
+    flex2: { flex: 2 },
+    gap10: { gap: 8, },
+    headerText: {
+        fontSize: 22,
+        fontFamily: 'Montserrat',
     },
-    flex2: {
-        flex: 2
-    },
-    gap10: {
-        gap: 8,
-    },
+    Montserrat: { fontFamily: 'Montserrat' },
+    Roboto: { fontFamily: 'Roboto' },
+    Raleway: { fontFamily: 'Raleway' },
+    fz10: { fontSize: 10 },
+    fz12: { fontSize: 12 },
+    fz14: { fontSize: 14 },
+    fz16: { fontSize: 16 },
+    fz20: { fontSize: 20 },
+    fz22: { fontSize: 22 },
+    fz25: { fontSize: 25 },
     Purple: '#701a75',
     LightPurple: '#86198f',
     LLightPurple: '#fae8ff',
     red: '#dc2626',
+    black: '#000000',
+    White: '#ffffff',
 
 })

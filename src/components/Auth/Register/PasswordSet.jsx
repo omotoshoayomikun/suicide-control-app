@@ -3,11 +3,14 @@ import { Text, View, StyleSheet } from "react-native"
 import { BackBtn, Btn } from "../../Forms/Btn"
 import GlobalStyle from "../../../utils/GlobalStyle"
 import { Input } from '../../Forms/Input'
+import Model from '../../Forms/Model'
 
-const { container, mt_40, mb_10, flex1 } = GlobalStyle
+const { container, mt_40, mb_10, flex1, headerText, mb_20, mb_30 } = GlobalStyle
 function PasswordSet({ navigation }) {
 
     const [value, setValue] = useState({})
+
+    const [modelDisplay, setModelDisplay] = useState(false)
 
     const Inputs = [
         {
@@ -23,20 +26,20 @@ function PasswordSet({ navigation }) {
     ]
 
     const handleContinue = () => {
-
+        setModelDisplay(true)
     }
 
 
 
     return (
         <View style={[container,]}>
-            <View>
+            <View style={[mb_30]}>
                 <BackBtn handlePress={() => navigation.goBack()} />
             </View>
             <View style={[flex1]}>
-                <View>
-                    <Text>Set your</Text>
-                    <Text>password</Text>
+                <View style={[mb_20]}>
+                    <Text style={[headerText]}>Set your</Text>
+                    <Text style={[headerText]}>password</Text>
                 </View>
                 {
                     Inputs.map((input) => (
@@ -49,6 +52,11 @@ function PasswordSet({ navigation }) {
             <View style={[mt_40]}>
                 <Btn text='Finish Setup' handlePress={handleContinue} />
             </View>
+            {
+                modelDisplay && (
+                    <Model visible={modelDisplay} handlePressLogin={() => navigation.navigate('Login')} />
+                )
+            }
         </View>
     )
 }

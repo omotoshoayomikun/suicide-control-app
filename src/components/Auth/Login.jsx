@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import { View, Text, StyleSheet } from "react-native"
+import { View, Text, StyleSheet, Image } from "react-native"
 import { Input } from "../Forms/Input"
 import GlobalStyle from "../../utils/GlobalStyle"
 import { BackBtn, Btn } from "../Forms/Btn"
-const { container, mb_20, flex1, mt_50, textRight, red } = GlobalStyle;
+const { container, mb_20, flex1, mt_50, textRight, red, headerText, textCenter } = GlobalStyle;
 
 function Login({ navigation }) {
 
@@ -11,14 +11,24 @@ function Login({ navigation }) {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
+    const handleLogin = () => {
+        navigation.navigate('LayoutTabScreen')
+    }
+
     return (
         <View style={[container]}>
             <View>
-                <BackBtn handlePress={() => navigation.goBack()} />
+                <BackBtn handlePress={() => navigation.navigate('Landing')} />
             </View>
             <View style={flex1}></View>
             <View>
-                <Text style={styles.txt1}>Login</Text>
+                <View style={styles.img_logo}>
+                    <Image
+                        style={styles.img_logo}
+                        source={require('../../../assets/imgs/profile-logo.png')}
+                    />
+                </View>
+                <Text style={[headerText, textCenter, mb_20]}>Login</Text>
                 <View style={[mb_20]}>
                     <Input placeholder='Email' />
                 </View>
@@ -30,7 +40,7 @@ function Login({ navigation }) {
                 </View>
             </View>
             <View style={[mt_50]}>
-                <Btn text='Login' />
+                <Btn text='Login' handlePress={handleLogin} />
             </View>
         </View>
     )
@@ -48,6 +58,12 @@ const styles = StyleSheet.create({
         color: red,
         fontSize: 15,
         fontFamily: 'Montserrat'
+    },
+    img_logo: {
+        width: 100,
+        height: 100,
+        marginLeft: 'auto',
+        marginRight: 'auto',
     }
 })
 

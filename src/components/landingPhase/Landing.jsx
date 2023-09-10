@@ -2,7 +2,8 @@ import {
     View,
     Text,
     StyleSheet,
-    Image
+    Image,
+    StatusBar
 
 } from 'react-native'
 import { Input } from '../Forms/Input'
@@ -10,10 +11,13 @@ import { Btn, OutBtn } from '../Forms/Btn'
 import GlobalStyle from '../../utils/GlobalStyle'
 function Landing({ navigation }) {
 
-    const {container, w_full,h_full, item_center, justify_around, TextBlack, mb_20} = GlobalStyle
+    const { container, w_full, h_full, item_center, justify_around, TextBlack, mb_20 } = GlobalStyle
 
     return (
         <View style={[container, justify_around, item_center]}>
+            <StatusBar
+                backgroundColor="#701a75"
+            />
             <View style={[styles.img_cont]}>
                 <Image
                     source={require('../../../assets/imgs/welcome.jpg')}

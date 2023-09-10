@@ -5,7 +5,7 @@ import GlobalStyle from "../../../utils/GlobalStyle"
 import { Input } from '../../Forms/Input'
 import { ScrollView } from 'react-native-gesture-handler'
 
-const { container, flex_row, flex1, gap10, mb_10, flex1_5, mt_40, containerScroll } = GlobalStyle
+const { headerText, flex_row, flex1, gap10, mb_10, flex1_5, mt_40, containerScroll, mb_20 } = GlobalStyle
 
 function NextOfKinQues({ navigation }) {
 
@@ -26,12 +26,13 @@ function NextOfKinQues({ navigation }) {
         },
         {
             id: 4,
-            placeholder: 'Gender',
+            placeholder: 'Phone Number',
         },
         {
             id: 5,
-            placeholder: 'Phone Number',
+            placeholder: 'Gender',
         },
+
         {
             id: 6,
             placeholder: 'State',
@@ -54,15 +55,17 @@ function NextOfKinQues({ navigation }) {
                     <BackBtn handlePress={() => navigation.goBack()} />
                 </View>
                 <View>
-                    <Text>Your next of kin</Text>
-                    <Text>information</Text>
-                    <View style={[flex_row, gap10, mb_10]}>
+                    <View style={[mb_20]}>
+                        <Text style={[headerText]}>Your next of kin</Text>
+                        <Text style={[headerText]}>information</Text>
+                    </View>
+                    <View style={[gap10, mb_10]}>
                         {
                             Inputs.map((input) => (
                                 <View key={input.id} style={[flex1]}>
                                     <Input placeholder={input.placeholder} />
                                 </View>
-                            )).slice(0, 2)
+                            )).slice(0, 4)
                         }
                     </View>
                     {
@@ -70,40 +73,18 @@ function NextOfKinQues({ navigation }) {
                             <View key={input.id} style={[mb_10]}>
                                 <Input placeholder={input.placeholder} />
                             </View>
-                        )).slice(2, 3)
+                        )).slice(4, 5)
                     }
-                    <View style={[flex_row, gap10, mb_10]}>
-                        {
-                            Inputs.map((input) => (
-                                <View key={input.id} style={[flex1]}>
-                                    <Input placeholder={input.placeholder} />
-                                </View>
-                            )).slice(3, 4)
-                        }
+                    <View style={[gap10, mb_10]}>
                         {
                             Inputs.map((input) => (
                                 <View key={input.id} style={[flex1_5]}>
                                     <Input placeholder={input.placeholder} />
                                 </View>
-                            )).slice(4, 5)
+                            )).slice(5, 7)
                         }
                     </View>
-                    <View style={[flex_row, gap10, mb_10]}>
-                        {
-                            Inputs.map((input) => (
-                                <View key={input.id} style={[flex1]}>
-                                    <Input placeholder={input.placeholder} />
-                                </View>
-                            )).slice(5, 6)
-                        }
-                        {
-                            Inputs.map((input) => (
-                                <View key={input.id} style={[flex1]}>
-                                    <Input placeholder={input.placeholder} />
-                                </View>
-                            )).slice(6, 7)
-                        }
-                    </View>
+                  
                 </View>
                 <View style={[mt_40]}>
                     <Btn text='Continue' handlePress={handleContinue} />

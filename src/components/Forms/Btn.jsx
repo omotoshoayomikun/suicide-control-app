@@ -1,5 +1,6 @@
 import { Pressable, View, Text, StyleSheet } from 'react-native'
 import GlobalStyle from '../../utils/GlobalStyle'
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 
 const { TextPurple, LightPurple, Purple, LLightPurple } = GlobalStyle
@@ -38,10 +39,12 @@ export const BackBtn = (props) => {
         <Pressable
             onPress={props.handlePress}
             style={({ pressed }) => [
-                { backgroundColor: pressed ? LightPurple : Purple, borderWidth: 2, borderColor: pressed ? LightPurple : Purple, }, styles.btn
+                { backgroundColor: pressed ? LightPurple : Purple, borderWidth: 2, borderColor: pressed ? LightPurple : Purple, }, styles.bbtn
             ]}
         >
-            <Text style={[styles.text, GlobalStyle.TextWhite]}></Text>
+            <Text style={[styles.text, GlobalStyle.TextWhite]}>
+                <FontAwesome5 name={'angle-left'} color='#fff' size={25} />
+            </Text>
         </Pressable>
     )
 }
@@ -60,5 +63,14 @@ const styles = StyleSheet.create({
     text: {
         fontSize: 17,
         fontFamily: 'Raleway',
-    }
+    },
+    bbtn: {
+        backgroundColor: Purple,
+        width: 45,
+        height: 45,
+        borderRadius: 8,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginBottom: 40,
+    },
 })
